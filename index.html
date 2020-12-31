@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Weather</title>
+    <meta content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="header">
+        <h1>Погода здесь</h1>
+        <button id="wide-btn" class="wide-width" onclick="updateLocation()">Обновить геолокацию</button>
+        <button id="tight-btn" class="tight-width" onclick="updateLocation()">↺</button>
+    </div>
+
+    <div class="body">
+        <div id="header-loading" class="loading">
+            <div class="message">Wait, data will be soon</div>
+            <div class="mark">↺</div>
+        </div>
+
+        <div id="header-info" class="info">
+            <h2>Saint Petersburg</h2>
+            <div class="data">
+                <img id="header-icon" src="" alt="Иконка погоды">
+                <div class="temperature">9°C</div>
+            </div>
+        </div>
+
+        <ul id="header-details" class="details">
+            <li>
+                <div class='title'>Ветер</div>
+                <div class='value'>Moderate breeze, 6.0 m/s, North-northwest</div>
+            </li>
+            <li>
+                <div class='title'>Облачность</div>
+                <div class='value'>Broken clouds</div>
+            </li>
+            <li>
+                <div class='title'>Давление</div>
+                <div class='value'>1013 hpa</div>
+            </li>
+            <li>
+                <div class='title'>Влажность</div>
+                <div class='value'>52%</div>
+            </li>
+            <li>
+                <div class='title'>Координаты</div>
+                <div class='value'>[59.88, 30.42]</div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="header">
+        <h2>Избранное</h2>
+        <form id="form" class="add-new-city">
+            <input placeholder="Добавить новый город">
+            <button class="add">+</button>
+        </form>
+    </div>
+
+    <ul class="cities"></ul>
+
+    <template>
+        <li>
+            <div class="info">
+                <div class="information">
+                    <h3>Moscow</h3>
+                    <img src="" alt="Иконка погоды">
+                    <div class="temperature">8°C</div>
+                </div>
+                <button class="close" onclick="removeCity(this)">+</button>
+            </div>
+
+            <div class="loading">
+                <div class="message">Wait, data will be soon</div>
+                <div class="mark"></div>
+            </div>
+
+            <ul class="details">
+                <li>
+                    <div class='title'>Ветер</div>
+                    <div class='value'>Moderate breeze, 6.0 m/s, North-northwest</div>
+                </li>
+                <li>
+                    <div class='title'>Облачность</div>
+                    <div class='value'>Broken clouds</div>
+                </li>
+                <li>
+                    <div class='title'>Давление</div>
+                    <div class='value'>1013 hpa</div>
+                </li>
+                <li>
+                    <div class='title'>Влажность</div>
+                    <div class='value'>52%</div>
+                </li>
+                <li>
+                    <div class='title'>Координаты</div>
+                    <div class='value'>[59.88, 30.42]</div>
+                </li>
+            </ul>
+        </li>
+    </template>
+</main>
+</body>
+</html>
